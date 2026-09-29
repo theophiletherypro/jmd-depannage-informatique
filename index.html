@@ -14,15 +14,15 @@
     <style>
         /* --- CHARTE GRAPHIQUE & VARIABLES --- */
         :root {
-            --bg-color: #030305;
+            --bg-color: #030306;
             --primary-cyan: #3df5f5;
             --text-light: #ffffff;
-            --text-gray: #b0c2d4;
+            --text-gray: #a2b4c7;
             --font-title: 'Orbitron', sans-serif;
             --font-body: 'Rajdhani', sans-serif;
         }
 
-        /* --- BASE & FOND TRÈS ÉTOILÉ (Multi-couches de constellations) --- */
+        /* --- BASE & FOND TRÈS ÉTOILÉ (Haute densité de constellations) --- */
         * {
             margin: 0;
             padding: 0;
@@ -37,7 +37,6 @@
             line-height: 1.6;
             overflow-x: hidden;
             
-            /* Génération d'une forte densité d'étoiles de tailles et d'éclats différents */
             background-image: 
                 radial-gradient(1.5px 1.5px at 20px 30px, #fff, rgba(0,0,0,0)),
                 radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
@@ -49,36 +48,36 @@
                 radial-gradient(1px 1px at 370px 220px, #fff, rgba(0,0,0,0)),
                 radial-gradient(2px 2px at 420px 50px, #fff, rgba(0,0,0,0)),
                 radial-gradient(1.5px 1.5px at 480px 140px, #fff, rgba(0,0,0,0)),
-                radial-gradient(1px 1px at 530px 270px, #fff, rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 530px 270px, #fff, rgba(0,0,0,0)),
                 radial-gradient(2px 2px at 590px 110px, #fff, rgba(0,0,0,0));
-            background-size: 600px 300px;
+            background-size: 500px 300px;
             background-repeat: repeat;
         }
 
-        /* --- BANNIÈRE DU HAUT --- */
+        /* BANNIÈRE */
         .top-banner {
             width: 100%;
             background-color: #000;
             border-bottom: 2px solid var(--primary-cyan);
+            min-height: 80px;
         }
 
         .top-banner img {
             width: 100%;
             height: auto;
-            max-height: 220px;
+            max-height: 200px;
             object-fit: cover;
             display: block;
         }
 
-        /* --- NAVIGATION --- */
+        /* MENU NAVIGATION */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 15px 5%;
-            background: rgba(3, 3, 5, 0.9);
+            background: rgba(3, 3, 6, 0.95);
             border-bottom: 1px solid rgba(61, 245, 245, 0.15);
-            backdrop-filter: blur(8px);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -90,7 +89,7 @@
             color: var(--primary-cyan);
             text-decoration: none;
             font-size: 1.4rem;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
         }
 
         nav a {
@@ -105,7 +104,7 @@
             color: var(--primary-cyan);
         }
 
-        /* --- SECTION HERO (Accueil) --- */
+        /* ACCUEIL HERO */
         .hero {
             display: flex;
             flex-direction: column;
@@ -120,18 +119,20 @@
         }
 
         .logo-img {
-            width: 220px;
-            height: 220px;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
             border: 2px solid var(--primary-cyan);
             object-fit: cover;
+            background-color: #000;
         }
 
         .hero h1 {
             font-family: var(--font-title);
-            font-size: 2.5rem;
-            letter-spacing: 2px;
+            font-size: 2.4rem;
+            letter-spacing: 1px;
             margin-bottom: 15px;
+            line-height: 1.2;
         }
 
         .hero h1 span {
@@ -145,19 +146,27 @@
             font-size: 1.3rem;
         }
 
-        /* Bouton sobre sans lueur néon */
+        /* CONTAINER DES BOUTONS D'ACCUEIL */
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        /* BOUTONS SOBRES SANS NEON */
         .btn-cta {
             display: inline-block;
             background: transparent;
             color: var(--primary-cyan);
             border: 2px solid var(--primary-cyan);
-            padding: 12px 35px;
+            padding: 12px 30px;
             font-family: var(--font-title);
-            font-size: 0.95rem;
+            font-size: 0.90rem;
             font-weight: 700;
             text-decoration: none;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             border-radius: 4px;
             transition: all 0.2s ease;
         }
@@ -167,10 +176,20 @@
             color: var(--bg-color);
         }
 
-        /* --- SECTION SERVICES --- */
+        .btn-google {
+            border-color: #ffffff;
+            color: #ffffff;
+        }
+
+        .btn-google:hover {
+            background: #ffffff;
+            color: #000000;
+        }
+
+        /* SERVICES */
         .services {
             padding: 60px 5%;
-            background: rgba(3, 3, 5, 0.7);
+            background: rgba(3, 3, 6, 0.85);
             border-top: 1px solid rgba(61, 245, 245, 0.1);
             border-bottom: 1px solid rgba(61, 245, 245, 0.1);
         }
@@ -180,7 +199,6 @@
             font-family: var(--font-title);
             color: var(--primary-cyan);
             margin-bottom: 40px;
-            letter-spacing: 2px;
         }
 
         .grid-services {
@@ -190,25 +208,19 @@
         }
 
         .card {
-            background: rgba(10, 15, 25, 0.6);
+            background: rgba(12, 18, 28, 0.7);
             border: 1px solid rgba(61, 245, 245, 0.15);
             padding: 30px;
             border-radius: 8px;
-            transition: border-color 0.2s, background-color 0.2s;
-        }
-
-        .card:hover {
-            border-color: var(--primary-cyan);
-            background: rgba(10, 15, 25, 0.85);
         }
 
         .card h3 {
             font-family: var(--font-title);
             margin-bottom: 15px;
-            color: var(--text-light);
+            color: var(--primary-cyan);
         }
 
-        /* --- SECTION CONTACT --- */
+        /* CONTACT */
         .contact-section {
             padding: 60px 5%;
             display: flex;
@@ -221,15 +233,14 @@
             font-family: var(--font-title);
             color: var(--primary-cyan);
             margin-bottom: 25px;
-            letter-spacing: 2px;
         }
 
         .contact-box {
-            background: rgba(10, 15, 25, 0.8);
+            background: rgba(12, 18, 28, 0.9);
             border: 1px solid rgba(61, 245, 245, 0.2);
             border-radius: 12px;
             padding: 40px;
-            max-width: 500px;
+            max-width: 520px;
             width: 100%;
             display: flex;
             flex-direction: column;
@@ -237,56 +248,60 @@
         }
 
         .logo-contact {
-            width: 110px;
-            height: 110px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             border: 2px solid var(--primary-cyan);
             margin-bottom: 25px;
             object-fit: cover;
+            background-color: #000;
         }
 
         .contact-info {
-            margin-top: 10px;
-            font-size: 1.4rem;
-            font-weight: bold;
+            margin-top: 15px;
+            font-size: 1.3rem;
+            width: 100%;
+        }
+
+        .contact-info p {
+            margin-bottom: 8px;
         }
 
         .contact-info a {
             color: var(--primary-cyan);
             text-decoration: none;
+            font-weight: bold;
         }
 
-        .contact-info a:hover {
-            text-decoration: underline;
+        .btn-maps-footer {
+            margin-top: 15px;
+            width: 100%;
+            text-align: center;
         }
 
-        /* --- FOOTER --- */
         footer {
             text-align: center;
             padding: 30px 20px;
             color: var(--text-gray);
             font-size: 1rem;
             border-top: 1px solid rgba(61, 245, 245, 0.1);
-            background: #010102;
         }
 
-        /* RESPONSIVE */
         @media (max-width: 768px) {
             header { flex-direction: column; gap: 15px; }
             .hero h1 { font-size: 1.8rem; }
             nav a { margin: 0 10px; }
-            .logo-img { width: 170px; height: 170px; }
+            .logo-img { width: 160px; height: 160px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- 1. BANNIÈRE EN HAUT DU SITE -->
+    <!-- BANNIÈRE EN HAUT -->
     <div class="top-banner">
-        <img src="banniere-jmd.png" alt="JMD Dépannage Informatique Bannière">
+        <img src="banniere-jmd.png" alt="JMD Dépannage Informatique">
     </div>
 
-    <!-- Barre de navigation -->
     <header>
         <a href="#" class="logo-nav">JMD INFORMATIQUE</a>
         <nav>
@@ -296,24 +311,14 @@
         </nav>
     </header>
 
-    <!-- Zone principale d'accueil -->
     <section class="hero" id="accueil">
-        <!-- 2. LOGO SUR LA PAGE D'ACCUEIL -->
+        <!-- LOGO CENTRAL -->
         <div class="logo-container">
-            <img src="logo-jmd.png" class="logo-img" alt="Logo JMD Dépannage Informatique">
+            <img src="logo-jmd.png" class="logo-img" alt="Logo JMD">
         </div>
         <h1>JMD <br><span>DÉPANNAGE INFORMATIQUE</span></h1>
         <p>Votre expert de confiance pour le dépannage et l'assistance technique dans les Pyrénées-Orientales. Intervention rapide à domicile pour particuliers et professionnels.</p>
-        <a href="#contact" class="btn-cta">Prendre RDV</a>
-    </section>
-
-    <!-- Zone des services -->
-    <section class="services" id="services">
-        <h2>Nos Services Technologiques</h2>
-        <div class="grid-services">
-            <div class="card">
-                <h3>🛠️ Résolution de Pannes</h3>
-
-
-</body>
-</html>
+        
+        <div class="hero-buttons">
+            <a href="#contact" class="btn-cta">Prendre RDV</a>
+            <a href="https://share.google" target="_blank" class="btn-cta btn-google">⭐ Avis Clients Google</a>
