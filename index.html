@@ -6,24 +6,23 @@
     <title>JMD Dépannage Informatique | Pyrénées-Orientales</title>
     <meta name="description" content="JMD Dépannage Informatique est votre expert de confiance pour le dépannage et l'assistance technique dans les Pyrénées-Orientales. Intervention rapide à domicile.">
     
-    <!-- Intégration d'une police futuriste et propre via Google Fonts -->
+    <!-- Intégration des polices -->
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://googleapis.com" rel="stylesheet">
 
     <style>
         /* --- CHARTE GRAPHIQUE & VARIABLES --- */
         :root {
-            --bg-color: #050508;
+            --bg-color: #030305;
             --primary-cyan: #3df5f5;
-            --primary-glow: rgba(61, 245, 245, 0.4);
             --text-light: #ffffff;
-            --text-gray: #a0aec0;
+            --text-gray: #b0c2d4;
             --font-title: 'Orbitron', sans-serif;
             --font-body: 'Rajdhani', sans-serif;
         }
 
-        /* --- BASE & FOND ÉTOILÉ (Inspiré de votre bannière) --- */
+        /* --- BASE & FOND TRÈS ÉTOILÉ (Multi-couches de constellations) --- */
         * {
             margin: 0;
             padding: 0;
@@ -37,35 +36,60 @@
             font-size: 1.2rem;
             line-height: 1.6;
             overflow-x: hidden;
-            /* Effet de fond avec des micro-étoiles en CSS pure */
+            
+            /* Génération d'une forte densité d'étoiles de tailles et d'éclats différents */
             background-image: 
-                radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
-                radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
-                radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px);
-            background-size: 550px 550px, 350px 350px, 250px 250px;
-            background-position: 0 0, 40px 60px, 130px 270px;
+                radial-gradient(1.5px 1.5px at 20px 30px, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 90px 10px, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 150px 120px, rgba(255,255,255,0.9), rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 230px 40px, #fff, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 280px 180px, #fff, rgba(0,0,0,0)),
+                radial-gradient(2.5px 2.5px at 310px 90px, rgba(255,255,255,0.95), rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 370px 220px, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 420px 50px, #fff, rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 480px 140px, #fff, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 530px 270px, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 590px 110px, #fff, rgba(0,0,0,0));
+            background-size: 600px 300px;
+            background-repeat: repeat;
         }
 
-        /* --- HEADER & NAVIGATION --- */
+        /* --- BANNIÈRE DU HAUT --- */
+        .top-banner {
+            width: 100%;
+            background-color: #000;
+            border-bottom: 2px solid var(--primary-cyan);
+        }
+
+        .top-banner img {
+            width: 100%;
+            height: auto;
+            max-height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* --- NAVIGATION --- */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 5%;
-            border-bottom: 1px solid rgba(61, 245, 245, 0.2);
-            backdrop-filter: blur(5px);
+            padding: 15px 5%;
+            background: rgba(3, 3, 5, 0.9);
+            border-bottom: 1px solid rgba(61, 245, 245, 0.15);
+            backdrop-filter: blur(8px);
             position: sticky;
             top: 0;
             z-index: 100;
         }
 
-        .logo-text {
+        .logo-nav {
             font-family: var(--font-title);
             font-weight: 700;
             color: var(--primary-cyan);
-            text-shadow: 0 0 10px var(--primary-glow);
             text-decoration: none;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             letter-spacing: 2px;
         }
 
@@ -74,12 +98,11 @@
             text-decoration: none;
             margin-left: 20px;
             font-weight: 500;
-            transition: color 0.3s;
+            transition: color 0.2s;
         }
 
         nav a:hover {
             color: var(--primary-cyan);
-            text-shadow: 0 0 8px var(--primary-cyan);
         }
 
         /* --- SECTION HERO (Accueil) --- */
@@ -89,78 +112,67 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 80px 20px;
-            min-height: 70vh;
+            padding: 60px 20px;
         }
 
-        /* Cercle lumineux inspiré du contour de votre logo */
         .logo-container {
-            border: 4px solid var(--primary-cyan);
-            border-radius: 50%;
-            padding: 20px;
-            box-shadow: 0 0 25px var(--primary-glow), inset 0 0 25px var(--primary-glow);
-            margin-bottom: 30px;
-            background: rgba(5, 5, 8, 0.6);
+            margin-bottom: 25px;
         }
 
-        /* Icône SVG d'écran et clé anglaise intégrée (reproduction de votre logo) */
-        .logo-svg {
-            width: 120px;
-            height: 120px;
-            fill: var(--primary-cyan);
-            filter: drop-shadow(0 0 5px var(--primary-cyan));
+        .logo-img {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            border: 2px solid var(--primary-cyan);
+            object-fit: cover;
         }
 
         .hero h1 {
             font-family: var(--font-title);
-            font-size: 2.8rem;
-            letter-spacing: 3px;
-            margin-bottom: 10px;
-            color: var(--text-light);
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
         }
 
         .hero h1 span {
             color: var(--primary-cyan);
-            text-shadow: 0 0 15px var(--primary-glow);
         }
 
         .hero p {
-            max-width: 600px;
+            max-width: 650px;
             color: var(--text-gray);
-            margin-bottom: 30px;
-            font-size: 1.4rem;
+            margin-bottom: 35px;
+            font-size: 1.3rem;
         }
 
-        /* Bouton call-to-action au style cyber/technologique */
+        /* Bouton sobre sans lueur néon */
         .btn-cta {
             display: inline-block;
             background: transparent;
             color: var(--primary-cyan);
             border: 2px solid var(--primary-cyan);
-            padding: 12px 30px;
+            padding: 12px 35px;
             font-family: var(--font-title);
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 700;
             text-decoration: none;
             text-transform: uppercase;
             letter-spacing: 2px;
             border-radius: 4px;
-            box-shadow: 0 0 10px var(--primary-glow);
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
         }
 
         .btn-cta:hover {
             background: var(--primary-cyan);
             color: var(--bg-color);
-            box-shadow: 0 0 25px var(--primary-cyan);
-            cursor: pointer;
         }
 
         /* --- SECTION SERVICES --- */
         .services {
             padding: 60px 5%;
-            background: rgba(255, 255, 255, 0.02);
+            background: rgba(3, 3, 5, 0.7);
             border-top: 1px solid rgba(61, 245, 245, 0.1);
+            border-bottom: 1px solid rgba(61, 245, 245, 0.1);
         }
 
         .services h2 {
@@ -178,17 +190,16 @@
         }
 
         .card {
-            background: rgba(5, 5, 8, 0.8);
-            border: 1px solid rgba(61, 245, 245, 0.2);
+            background: rgba(10, 15, 25, 0.6);
+            border: 1px solid rgba(61, 245, 245, 0.15);
             padding: 30px;
             border-radius: 8px;
-            transition: transform 0.3s, border-color 0.3s;
+            transition: border-color 0.2s, background-color 0.2s;
         }
 
         .card:hover {
-            transform: translateY(-5px);
             border-color: var(--primary-cyan);
-            box-shadow: 0 0 15px var(--primary-glow);
+            background: rgba(10, 15, 25, 0.85);
         }
 
         .card h3 {
@@ -197,28 +208,87 @@
             color: var(--text-light);
         }
 
+        /* --- SECTION CONTACT --- */
+        .contact-section {
+            padding: 60px 5%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            font-family: var(--font-title);
+            color: var(--primary-cyan);
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+        }
+
+        .contact-box {
+            background: rgba(10, 15, 25, 0.8);
+            border: 1px solid rgba(61, 245, 245, 0.2);
+            border-radius: 12px;
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo-contact {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            border: 2px solid var(--primary-cyan);
+            margin-bottom: 25px;
+            object-fit: cover;
+        }
+
+        .contact-info {
+            margin-top: 10px;
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+
+        .contact-info a {
+            color: var(--primary-cyan);
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
         /* --- FOOTER --- */
         footer {
             text-align: center;
-            padding: 40px 20px;
+            padding: 30px 20px;
             color: var(--text-gray);
             font-size: 1rem;
             border-top: 1px solid rgba(61, 245, 245, 0.1);
+            background: #010102;
         }
 
         /* RESPONSIVE */
         @media (max-width: 768px) {
             header { flex-direction: column; gap: 15px; }
-            .hero h1 { font-size: 2rem; }
+            .hero h1 { font-size: 1.8rem; }
             nav a { margin: 0 10px; }
+            .logo-img { width: 170px; height: 170px; }
         }
     </style>
 </head>
 <body>
 
+    <!-- 1. BANNIÈRE EN HAUT DU SITE -->
+    <div class="top-banner">
+        <img src="banniere-jmd.png" alt="JMD Dépannage Informatique Bannière">
+    </div>
+
     <!-- Barre de navigation -->
     <header>
-        <a href="#" class="logo-text">JMD</a>
+        <a href="#" class="logo-nav">JMD INFORMATIQUE</a>
         <nav>
             <a href="#accueil">Accueil</a>
             <a href="#services">Services</a>
@@ -228,22 +298,13 @@
 
     <!-- Zone principale d'accueil -->
     <section class="hero" id="accueil">
+        <!-- 2. LOGO SUR LA PAGE D'ACCUEIL -->
         <div class="logo-container">
-            <!-- Reproduction vectorielle (SVG) de l'icône de votre logo pour un affichage net sans ralentir le site -->
-            <svg class="logo-svg" viewBox="0 0 100 100">
-                <!-- Écran de l'ordinateur -->
-                <rect x="15" y="15" width="70" height="45" rx="3" fill="none" stroke="#3df5f5" stroke-width="4"/>
-                <!-- Support/Pied -->
-                <polygon points="50,60 30,78 70,78" fill="none" stroke="#3df5f5" stroke-width="4" stroke-linejoin="round"/>
-                <line x1="50" y1="60" x2="50" y2="70" stroke="#3df5f5" stroke-width="4"/>
-                <!-- Clé Anglaise au centre -->
-                <path d="M35,48 L53,30 C56,27 61,27 64,30 C67,33 67,38 64,41 L46,59 Z" />
-                <path d="M35,48 C32,45 32,40 35,37 C38,34 43,34 46,37" fill="none" stroke="#3df5f5" stroke-width="4"/>
-            </svg>
+            <img src="logo-jmd.png" class="logo-img" alt="Logo JMD Dépannage Informatique">
         </div>
         <h1>JMD <br><span>DÉPANNAGE INFORMATIQUE</span></h1>
         <p>Votre expert de confiance pour le dépannage et l'assistance technique dans les Pyrénées-Orientales. Intervention rapide à domicile pour particuliers et professionnels.</p>
-        <a href="mailto:votre-email@exemple.com" class="btn-cta">Demander une intervention</a>
+        <a href="#contact" class="btn-cta">Prendre RDV</a>
     </section>
 
     <!-- Zone des services -->
@@ -252,24 +313,7 @@
         <div class="grid-services">
             <div class="card">
                 <h3>🛠️ Résolution de Pannes</h3>
-                <p>Diagnostic complet, réparation de composants matériels et résolution de bugs systèmes sur PC fixes et portables.</p>
-            </div>
-            <div class="card">
-                <h3>🛡️ Sécurité &amp; Virus</h3>
-                <p>Élimination complète des logiciels malveillants, virus ou ransomwares, et installation de protections robustes.</p>
-            </div>
-            <div class="card">
-                <h3>🚀 Optimisation</h3>
-                <p>Nettoyage système et mise à niveau matérielle (passage au SSD, ajout de RAM) pour redonner une seconde jeunesse à vos machines ordinatrices.</p>
-            </div>
-        </div>
-    </section>
 
-    <!-- Pied de page -->
-    <footer id="contact">
-        <p>&copy; 2026 JMD Dépannage Informatique. Tous droits réservés.</p>
-        <p>Interventions dans les Pyrénées-Orientales</p>
-    </footer>
 
 </body>
 </html>
