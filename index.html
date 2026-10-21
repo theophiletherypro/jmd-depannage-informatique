@@ -22,7 +22,7 @@
             --font-body: 'Rajdhani', sans-serif;
         }
 
-        /* --- BASE & INTEGRATION DU FOND (SANS DEFORMATION) --- */
+        /* --- BASE & INTEGRATION DU FOND DYNAMIQUE --- */
         * {
             margin: 0;
             padding: 0;
@@ -37,48 +37,47 @@
             line-height: 1.6;
             overflow-x: hidden;
             
-            /* Application de ton image fond_jmd.webp */
+            /* Fond d'écran fluide et fixe */
             background-image: url('fond_jmd.webp');
-            background-size: cover;                 /* Remplit l'écran proportionnellement */
-            background-position: center center;     /* Reste centré */
-            background-repeat: no-repeat;           /* Pas de mosaïque */
-            background-attachment: fixed;           /* Effet fixe au défilement */
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
         }
 
-        /* BANNIÈRE */
-        .top-banner {
-            width: 100%;
-            background-color: #000;
-            border-bottom: 2px solid var(--primary-cyan);
-            min-height: 80px;
-        }
-
-        .top-banner img {
-            width: 100%;
-            height: auto;
-            max-height: 200px;
-            object-fit: cover;
-            display: block;
-        }
-
-        /* MENU NAVIGATION */
+        /* MENU NAVIGATION (LOGO EN HAUT À GAUCHE) */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 5%;
-            background: rgba(3, 3, 6, 0.95);
+            padding: 10px 5%;
+            background: rgba(3, 3, 6, 0.90);
             border-bottom: 1px solid rgba(61, 245, 245, 0.15);
             position: sticky;
             top: 0;
             z-index: 100;
+            backdrop-filter: blur(5px); /* Léger effet de flou moderne */
         }
 
-        .logo-nav {
+        .brand-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            gap: 12px;
+        }
+
+        .logo-nav-img {
+            height: 45px; /* Taille dynamique pour le menu */
+            width: auto;
+            border-radius: 50%;
+            border: 1px solid var(--primary-cyan);
+            background-color: #000;
+        }
+
+        .logo-text {
             font-family: var(--font-title);
             font-weight: 700;
             color: var(--primary-cyan);
-            text-decoration: none;
             font-size: 1.4rem;
             letter-spacing: 1px;
         }
@@ -95,34 +94,22 @@
             color: var(--primary-cyan);
         }
 
-        /* ACCUEIL HERO */
+        /* ACCUEIL HERO (ÉPURÉ SANS LE GROS LOGO CENTRAL) */
         .hero {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 60px 20px;
-        }
-
-        .logo-container {
-            margin-bottom: 25px;
-        }
-
-        .logo-img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            border: 2px solid var(--primary-cyan);
-            object-fit: cover;
-            background-color: #000;
+            padding: 100px 20px;
+            min-height: 60vh; /* S'adapte à la hauteur du terminal ou mobile */
         }
 
         .hero h1 {
             font-family: var(--font-title);
-            font-size: 2.4rem;
+            font-size: 3rem;
             letter-spacing: 1px;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             line-height: 1.2;
         }
 
@@ -131,29 +118,28 @@
         }
 
         .hero p {
-            max-width: 650px;
+            max-width: 700px;
             color: var(--text-gray);
-            margin-bottom: 35px;
-            font-size: 1.3rem;
+            margin-bottom: 40px;
+            font-size: 1.4rem;
         }
 
-        /* CONTAINER DES BOUTONS D'ACCUEIL */
+        /* BOUTONS FLUIDES */
         .hero-buttons {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 12px;
+            gap: 15px;
         }
 
-        /* BOUTONS */
         .btn-cta {
             display: inline-block;
             background: transparent;
             color: var(--primary-cyan);
             border: 2px solid var(--primary-cyan);
-            padding: 12px 30px;
+            padding: 14px 35px;
             font-family: var(--font-title);
-            font-size: 0.90rem;
+            font-size: 0.95rem;
             font-weight: 700;
             text-decoration: none;
             text-transform: uppercase;
@@ -177,32 +163,39 @@
             color: #000000;
         }
 
-        /* SERVICES */
+        /* SERVICES ACCORDÉONS/FLEXIBLES */
         .services {
-            padding: 60px 5%;
-            background: rgba(3, 3, 6, 0.85);
+            padding: 80px 5%;
+            background: rgba(3, 3, 6, 0.80);
             border-top: 1px solid rgba(61, 245, 245, 0.1);
-            border-bottom: 1px solid rgba(61, 245, 245, 0.1);
         }
 
         .services h2 {
             text-align: center;
             font-family: var(--font-title);
             color: var(--primary-cyan);
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
 
         .grid-services {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .card {
-            background: rgba(12, 18, 28, 0.7);
+            background: rgba(12, 18, 28, 0.65);
             border: 1px solid rgba(61, 245, 245, 0.15);
-            padding: 30px;
+            padding: 35px;
             border-radius: 8px;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px); /* Petit effet de lévitation fluide */
+            border-color: var(--primary-cyan);
         }
 
         .card h3 {
@@ -211,9 +204,9 @@
             color: var(--primary-cyan);
         }
 
-        /* CONTACT */
+        /* CONTACT VIA CONTENEUR SOUPLE */
         .contact-section {
-            padding: 60px 5%;
+            padding: 80px 5%;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -223,39 +216,26 @@
         .contact-section h2 {
             font-family: var(--font-title);
             color: var(--primary-cyan);
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
 
         .contact-box {
-            background: rgba(12, 18, 28, 0.9);
+            background: rgba(12, 18, 28, 0.85);
             border: 1px solid rgba(61, 245, 245, 0.2);
             border-radius: 12px;
             padding: 40px;
-            max-width: 520px;
+            max-width: 550px;
             width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .logo-contact {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            border: 2px solid var(--primary-cyan);
-            margin-bottom: 25px;
-            object-fit: cover;
-            background-color: #000;
         }
 
         .contact-info {
-            margin-top: 15px;
             font-size: 1.3rem;
             width: 100%;
+            text-align: left;
         }
 
         .contact-info p {
-            margin-bottom: 8px;
+            margin-bottom: 15px;
         }
 
         .contact-info a {
@@ -265,29 +245,58 @@
         }
 
         .btn-maps-footer {
-            margin-top: 20px;
+            margin-top: 25px;
             width: 100%;
+            text-align: center;
+        }
+
+        /* BANNIÈRE EN BAS DU SITE (FLUIDE & AJUSTABLE) */
+        .bottom-banner {
+            width: 100%;
+            background-color: #000;
+            border-top: 2px solid var(--primary-cyan);
+            margin-top: 40px;
+        }
+
+        .bottom-banner img {
+            width: 100%;
+            height: auto;
+            max-height: 250px;
+            object-fit: cover;
+            display: block;
         }
 
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 25px;
             color: var(--text-gray);
             font-size: 1rem;
-            border-top: 1px solid rgba(61, 245, 245, 0.1);
+            background: #000;
+        }
+
+        /* RESPONSIVE DESIGN (MOBILE AUTOMATIQUE) */
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                gap: 10px;
+            }
+            nav a {
+                margin: 0 10px;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Bannière supérieure -->
-    <div class="top-banner">
-        <img src="banniere_jmd.webp" alt="JMD Dépannage Informatique Bannière">
-    </div>
-
-    <!-- En-tête / Navigation -->
+    <!-- En-tête / Navigation avec Logo en haut à gauche -->
     <header>
-        <a href="#" class="logo-nav">JMD INFO</a>
+        <a href="#" class="brand-link">
+            <img src="logo_jmd.png" alt="Logo JMD" class="logo-nav-img">
+            <span class="logo-text">JMD INFO</span>
+        </a>
         <nav>
             <a href="#accueil">Accueil</a>
             <a href="#services">Services</a>
@@ -295,11 +304,8 @@
         </nav>
     </header>
 
-    <!-- Section principale (Hero) -->
+    <!-- Section principale (Hero) épurée -->
     <section id="accueil" class="hero">
-        <div class="logo-container">
-            <img src="logo_jmd.png" alt="Logo JMD" class="logo-img">
-        </div>
         <h1>Dépannage Informatique <span>66</span></h1>
         <p>Votre expert technique de proximité dans les Pyrénées-Orientales. Réparation d'ordinateurs, maintenance système, éradication de virus et assistance rapide à domicile.</p>
         
@@ -323,11 +329,3 @@
             </div>
             <div class="card">
                 <h3>Sauvegarde & Données</h3>
-                <p>Récupération de vos documents et photos perdus sur disques endommagés et configuration de sauvegardes automatiques sécurisées.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section Contact -->
-    <section id="contact" class="contact-section">
-
