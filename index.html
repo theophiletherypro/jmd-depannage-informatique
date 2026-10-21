@@ -6,23 +6,21 @@
     <title>JMD Dépannage Informatique | Pyrénées-Orientales</title>
     <meta name="description" content="JMD Dépannage Informatique est votre expert de confiance pour le dépannage et l'assistance technique dans les Pyrénées-Orientales. Intervention rapide à domicile.">
     
-    <!-- Intégration des polices Google Fonts -->
-    <link rel="preconnect" href="https://googleapis.com">
+    <!-- Polices de secours standards pour éviter tout blocage d'affichage -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://googleapis.com" rel="stylesheet">
 
     <style>
-        /* --- CHARTE GRAPHIQUE & VARIABLES --- */
+        /* --- VARIABLES DE COULEURS --- */
         :root {
-            --bg-color: #030306;
+            --bg-dark: #030306;
             --primary-cyan: #3df5f5;
-            --text-light: #ffffff;
+            --text-white: #ffffff;
             --text-gray: #a2b4c7;
-            --font-title: 'Orbitron', sans-serif;
-            --font-body: 'Rajdhani', sans-serif;
         }
 
-        /* --- BASE & INTEGRATION DU FOND DYNAMIQUE --- */
+        /* --- STRUCTURE DE BASE SANS BLOCAGE --- */
         * {
             margin: 0;
             padding: 0;
@@ -30,87 +28,79 @@
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-light);
-            font-family: var(--font-body);
+            background-color: var(--bg-dark);
+            color: var(--text-white);
+            font-family: 'Rajdhani', sans-serif;
             font-size: 1.2rem;
             line-height: 1.6;
-            overflow-x: hidden;
             
-            /* Fond d'écran fluide et fixe */
+            /* Configuration simplifiée de l'arrière-plan */
             background-image: url('fond_jmd.webp');
             background-size: cover;
-            background-position: center center;
+            background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
         }
 
-        /* MENU NAVIGATION (LOGO EN HAUT À GAUCHE) */
+        /* --- BARRE DE NAVIGATION (Logo à gauche, menu à droite) --- */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 5%;
-            background: rgba(3, 3, 6, 0.90);
-            border-bottom: 1px solid rgba(61, 245, 245, 0.15);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            backdrop-filter: blur(5px); /* Léger effet de flou moderne */
+            padding: 20px 5%;
+            background: rgba(3, 3, 6, 0.9); /* Fond sombre solide pour garantir la lisibilité */
+            border-bottom: 2px solid var(--primary-cyan);
         }
 
-        .brand-link {
+        .brand {
             display: flex;
             align-items: center;
             text-decoration: none;
-            gap: 12px;
+            gap: 15px;
         }
 
         .logo-nav-img {
-            height: 45px; /* Taille dynamique pour le menu */
-            width: auto;
+            height: 50px;
+            width: 50px;
             border-radius: 50%;
-            border: 1px solid var(--primary-cyan);
+            border: 2px solid var(--primary-cyan);
             background-color: #000;
+            object-fit: cover;
         }
 
         .logo-text {
-            font-family: var(--font-title);
+            font-family: 'Orbitron', sans-serif;
             font-weight: 700;
             color: var(--primary-cyan);
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             letter-spacing: 1px;
         }
 
         nav a {
-            color: var(--text-light);
+            color: var(--text-white);
             text-decoration: none;
-            margin-left: 20px;
-            font-weight: 500;
-            transition: color 0.2s;
+            margin-left: 25px;
+            font-weight: 700;
+            text-transform: uppercase;
         }
 
         nav a:hover {
             color: var(--primary-cyan);
         }
 
-        /* ACCUEIL HERO (ÉPURÉ SANS LE GROS LOGO CENTRAL) */
+        /* --- SECTION CONTENU PRINCIPAL --- */
         .hero {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
             text-align: center;
-            padding: 100px 20px;
-            min-height: 60vh; /* S'adapte à la hauteur du terminal ou mobile */
+            padding: 80px 20px;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .hero h1 {
-            font-family: var(--font-title);
+            font-family: 'Orbitron', sans-serif;
             font-size: 3rem;
-            letter-spacing: 1px;
             margin-bottom: 20px;
-            line-height: 1.2;
+            color: var(--text-white);
         }
 
         .hero h1 span {
@@ -118,18 +108,17 @@
         }
 
         .hero p {
-            max-width: 700px;
             color: var(--text-gray);
-            margin-bottom: 40px;
             font-size: 1.4rem;
+            margin-bottom: 40px;
         }
 
-        /* BOUTONS FLUIDES */
+        /* --- BOUTONS --- */
         .hero-buttons {
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
-            gap: 15px;
+            gap: 20px;
+            flex-wrap: wrap;
         }
 
         .btn-cta {
@@ -137,44 +126,42 @@
             background: transparent;
             color: var(--primary-cyan);
             border: 2px solid var(--primary-cyan);
-            padding: 14px 35px;
-            font-family: var(--font-title);
-            font-size: 0.95rem;
+            padding: 12px 30px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.9rem;
             font-weight: 700;
             text-decoration: none;
             text-transform: uppercase;
-            letter-spacing: 1px;
             border-radius: 4px;
-            transition: all 0.2s ease;
         }
 
         .btn-cta:hover {
             background: var(--primary-cyan);
-            color: var(--bg-color);
+            color: var(--bg-dark);
         }
 
-        .btn-google {
-            border-color: #ffffff;
-            color: #ffffff;
+        .btn-secondary {
+            border-color: var(--text-white);
+            color: var(--text-white);
         }
 
-        .btn-google:hover {
-            background: #ffffff;
-            color: #000000;
+        .btn-secondary:hover {
+            background: var(--text-white);
+            color: #000;
         }
 
-        /* SERVICES ACCORDÉONS/FLEXIBLES */
+        /* --- BLOCS DE SERVICES --- */
         .services {
-            padding: 80px 5%;
-            background: rgba(3, 3, 6, 0.80);
-            border-top: 1px solid rgba(61, 245, 245, 0.1);
+            padding: 60px 5%;
+            background: rgba(3, 3, 6, 0.85);
+            margin-top: 40px;
         }
 
         .services h2 {
             text-align: center;
-            font-family: var(--font-title);
+            font-family: 'Orbitron', sans-serif;
             color: var(--primary-cyan);
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
 
         .grid-services {
@@ -186,56 +173,42 @@
         }
 
         .card {
-            background: rgba(12, 18, 28, 0.65);
-            border: 1px solid rgba(61, 245, 245, 0.15);
-            padding: 35px;
+            background: rgba(12, 18, 28, 0.9);
+            border: 1px solid rgba(61, 245, 245, 0.3);
+            padding: 30px;
             border-radius: 8px;
-            transition: transform 0.2s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px); /* Petit effet de lévitation fluide */
-            border-color: var(--primary-cyan);
         }
 
         .card h3 {
-            font-family: var(--font-title);
+            font-family: 'Orbitron', sans-serif;
             margin-bottom: 15px;
             color: var(--primary-cyan);
         }
 
-        /* CONTACT VIA CONTENEUR SOUPLE */
+        /* --- SECTION CONTACT --- */
         .contact-section {
-            padding: 80px 5%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            padding: 60px 20px;
             text-align: center;
         }
 
         .contact-section h2 {
-            font-family: var(--font-title);
+            font-family: 'Orbitron', sans-serif;
             color: var(--primary-cyan);
             margin-bottom: 30px;
         }
 
         .contact-box {
-            background: rgba(12, 18, 28, 0.85);
-            border: 1px solid rgba(61, 245, 245, 0.2);
+            background: rgba(12, 18, 28, 0.95);
+            border: 1px solid rgba(61, 245, 245, 0.4);
             border-radius: 12px;
-            padding: 40px;
-            max-width: 550px;
-            width: 100%;
-        }
-
-        .contact-info {
-            font-size: 1.3rem;
-            width: 100%;
-            text-align: left;
+            padding: 35px;
+            max-width: 500px;
+            margin: 0 auto;
         }
 
         .contact-info p {
             margin-bottom: 15px;
+            font-size: 1.3rem;
         }
 
         .contact-info a {
@@ -244,56 +217,51 @@
             font-weight: bold;
         }
 
-        .btn-maps-footer {
-            margin-top: 25px;
-            width: 100%;
-            text-align: center;
-        }
-
-        /* BANNIÈRE EN BAS DU SITE (FLUIDE & AJUSTABLE) */
-        .bottom-banner {
+        /* --- PIED DE PAGE : BANNIÈRE SÉCURISÉE --- */
+        .footer-banner {
             width: 100%;
             background-color: #000;
             border-top: 2px solid var(--primary-cyan);
-            margin-top: 40px;
+            margin-top: 60px;
         }
 
-        .bottom-banner img {
+        .footer-banner img {
             width: 100%;
             height: auto;
-            max-height: 250px;
+            max-height: 220px;
             object-fit: cover;
             display: block;
         }
 
         footer {
+            background-color: #000;
             text-align: center;
-            padding: 25px;
+            padding: 20px;
             color: var(--text-gray);
             font-size: 1rem;
-            background: #000;
         }
 
-        /* RESPONSIVE DESIGN (MOBILE AUTOMATIQUE) */
+        /* REGLAGES MOBILE */
         @media (max-width: 600px) {
             header {
                 flex-direction: column;
-                gap: 10px;
+                gap: 15px;
+                text-align: center;
             }
             nav a {
                 margin: 0 10px;
             }
             .hero h1 {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- En-tête / Navigation avec Logo en haut à gauche -->
+    <!-- Barre de menu (Fixe en haut de page, non collante au défilement pour éviter les bugs) -->
     <header>
-        <a href="#" class="brand-link">
+        <a href="#" class="brand">
             <img src="logo_jmd.png" alt="Logo JMD" class="logo-nav-img">
             <span class="logo-text">JMD INFO</span>
         </a>
@@ -304,30 +272,56 @@
         </nav>
     </header>
 
-    <!-- Section principale (Hero) épurée -->
+    <!-- Accueil -->
     <section id="accueil" class="hero">
         <h1>Dépannage Informatique <span>66</span></h1>
-        <p>Votre expert technique de proximité dans les Pyrénées-Orientales. Réparation d'ordinateurs, maintenance système, éradication de virus et assistance rapide à domicile.</p>
+        <p>Votre expert technique de confiance dans les Pyrénées-Orientales. Réparation d'ordinateurs, maintenance système, éradication de virus et assistance rapide à domicile.</p>
         
         <div class="hero-buttons">
-            <a href="tel:0600000000" class="btn-cta">Appeler maintenant</a>
-            <a href="#contact" class="btn-cta btn-google">Demander un devis</a>
+            <a href="tel:0600000000" class="btn-cta">Appeler</a>
+            <a href="#contact" class="btn-cta btn-secondary">Devis gratuit</a>
         </div>
     </section>
 
-    <!-- Section Services -->
+    <!-- Services -->
     <section id="services" class="services">
-        <h2>Nos Services de Dépannage</h2>
+        <h2>Nos Services</h2>
         <div class="grid-services">
             <div class="card">
                 <h3>Réparation PC & Mac</h3>
-                <p>Diagnostic complet, remplacement de composants défectueux (disque dur, mémoire vive, écran) et optimisation de la vitesse de votre machine.</p>
+                <p>Diagnostic complet, remplacement de composants défectueux (disque dur, mémoire vive, écran) et optimisation de votre machine.</p>
             </div>
             <div class="card">
                 <h3>Virus & Sécurité</h3>
-                <p>Suppression complète des logiciels malveillants, virus, publiciels encombrants et installation de solutions de protection robustes.</p>
+                <p>Suppression complète des logiciels malveillants, virus, publiciels encombrants et installation de solutions de protection.</p>
             </div>
             <div class="card">
                 <h3>Sauvegarde & Données</h3>
+                <p>Récupération de vos documents perdus sur disques endommagés et configuration de sauvegardes sécurisées.</p>
+            </div>
+        </div>
+    </section>
 
+    <!-- Contact -->
+    <section id="contact" class="contact-section">
+        <h2>Contact</h2>
+        <div class="contact-box">
+            <div class="contact-info">
+                <p>📍 Secteur : <strong>Pyrénées-Orientales (66)</strong></p>
+                <p>📞 Téléphone : <a href="tel:0600000000">06 00 00 00 00</a></p>
+                <p>✉️ Email : <a href="mailto:contact@jmd-info.fr">contact@jmd-info.fr</a></p>
+            </div>
+        </div>
+    </section>
 
+    <!-- Bannière en pied de page (Tout en bas) -->
+    <div class="footer-banner">
+        <img src="banniere_jmd.webp" alt="Bannière JMD Informatique">
+    </div>
+
+    <footer>
+        <p>&copy; 2026 JMD Dépannage Informatique. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>
