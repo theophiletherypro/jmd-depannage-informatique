@@ -6,10 +6,10 @@
     <title>JMD Dépannage Informatique | Pyrénées-Orientales</title>
     <meta name="description" content="JMD Dépannage Informatique est votre expert de confiance pour le dépannage et l'assistance technique dans les Pyrénées-Orientales. Intervention rapide à domicile.">
     
-    <!-- Intégration des polices -->
+    <!-- Intégration des polices Google Fonts -->
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com" rel="stylesheet">
+    <link href="https://googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
 
     <style>
         /* --- CHARTE GRAPHIQUE & VARIABLES --- */
@@ -22,7 +22,7 @@
             --font-body: 'Rajdhani', sans-serif;
         }
 
-        /* --- BASE & FOND TRÈS ÉTOILÉ (Haute densité de constellations) --- */
+        /* --- BASE & INTEGRATION DU FOND (SANS DEFORMATION) --- */
         * {
             margin: 0;
             padding: 0;
@@ -37,21 +37,12 @@
             line-height: 1.6;
             overflow-x: hidden;
             
-            background-image: 
-                radial-gradient(1.5px 1.5px at 20px 30px, #fff, rgba(0,0,0,0)),
-                radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
-                radial-gradient(1px 1px at 90px 10px, #fff, rgba(0,0,0,0)),
-                radial-gradient(2px 2px at 150px 120px, rgba(255,255,255,0.9), rgba(0,0,0,0)),
-                radial-gradient(1.5px 1.5px at 230px 40px, #fff, rgba(0,0,0,0)),
-                radial-gradient(1px 1px at 280px 180px, #fff, rgba(0,0,0,0)),
-                radial-gradient(2.5px 2.5px at 310px 90px, rgba(255,255,255,0.95), rgba(0,0,0,0)),
-                radial-gradient(1px 1px at 370px 220px, #fff, rgba(0,0,0,0)),
-                radial-gradient(2px 2px at 420px 50px, #fff, rgba(0,0,0,0)),
-                radial-gradient(1.5px 1.5px at 480px 140px, #fff, rgba(0,0,0,0)),
-                radial-gradient(1.5px 1.5px at 530px 270px, #fff, rgba(0,0,0,0)),
-                radial-gradient(2px 2px at 590px 110px, #fff, rgba(0,0,0,0));
-            background-size: 500px 300px;
-            background-repeat: repeat;
+            /* Application de ton image fond_jmd.webp */
+            background-image: url('fond_jmd.webp');
+            background-size: cover;                 /* Remplit l'écran proportionnellement */
+            background-position: center center;     /* Reste centré */
+            background-repeat: no-repeat;           /* Pas de mosaïque */
+            background-attachment: fixed;           /* Effet fixe au défilement */
         }
 
         /* BANNIÈRE */
@@ -154,7 +145,7 @@
             gap: 12px;
         }
 
-        /* BOUTONS SOBRES SANS NEON */
+        /* BOUTONS */
         .btn-cta {
             display: inline-block;
             background: transparent;
@@ -274,36 +265,29 @@
         }
 
         .btn-maps-footer {
-            margin-top: 15px;
+            margin-top: 20px;
             width: 100%;
-            text-align: center;
         }
 
         footer {
             text-align: center;
-            padding: 30px 20px;
+            padding: 20px;
             color: var(--text-gray);
             font-size: 1rem;
             border-top: 1px solid rgba(61, 245, 245, 0.1);
-        }
-
-        @media (max-width: 768px) {
-            header { flex-direction: column; gap: 15px; }
-            .hero h1 { font-size: 1.8rem; }
-            nav a { margin: 0 10px; }
-            .logo-img { width: 160px; height: 160px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- BANNIÈRE EN HAUT -->
+    <!-- Bannière supérieure -->
     <div class="top-banner">
-        <img src="banniere-jmd.png" alt="JMD Dépannage Informatique">
+        <img src="banniere_jmd.webp" alt="JMD Dépannage Informatique Bannière">
     </div>
 
+    <!-- En-tête / Navigation -->
     <header>
-        <a href="#" class="logo-nav">JMD INFORMATIQUE</a>
+        <a href="#" class="logo-nav">JMD INFO</a>
         <nav>
             <a href="#accueil">Accueil</a>
             <a href="#services">Services</a>
@@ -311,14 +295,39 @@
         </nav>
     </header>
 
-    <section class="hero" id="accueil">
-        <!-- LOGO CENTRAL -->
+    <!-- Section principale (Hero) -->
+    <section id="accueil" class="hero">
         <div class="logo-container">
-            <img src="logo-jmd.png" class="logo-img" alt="Logo JMD">
+            <img src="logo_jmd.png" alt="Logo JMD" class="logo-img">
         </div>
-        <h1>JMD <br><span>DÉPANNAGE INFORMATIQUE</span></h1>
-        <p>Votre expert de confiance pour le dépannage et l'assistance technique dans les Pyrénées-Orientales. Intervention rapide à domicile pour particuliers et professionnels.</p>
+        <h1>Dépannage Informatique <span>66</span></h1>
+        <p>Votre expert technique de proximité dans les Pyrénées-Orientales. Réparation d'ordinateurs, maintenance système, éradication de virus et assistance rapide à domicile.</p>
         
         <div class="hero-buttons">
-            <a href="#contact" class="btn-cta">Prendre RDV</a>
-            <a href="https://share.google" target="_blank" class="btn-cta btn-google">⭐ Avis Clients Google</a>
+            <a href="tel:0600000000" class="btn-cta">Appeler maintenant</a>
+            <a href="#contact" class="btn-cta btn-google">Demander un devis</a>
+        </div>
+    </section>
+
+    <!-- Section Services -->
+    <section id="services" class="services">
+        <h2>Nos Services de Dépannage</h2>
+        <div class="grid-services">
+            <div class="card">
+                <h3>Réparation PC & Mac</h3>
+                <p>Diagnostic complet, remplacement de composants défectueux (disque dur, mémoire vive, écran) et optimisation de la vitesse de votre machine.</p>
+            </div>
+            <div class="card">
+                <h3>Virus & Sécurité</h3>
+                <p>Suppression complète des logiciels malveillants, virus, publiciels encombrants et installation de solutions de protection robustes.</p>
+            </div>
+            <div class="card">
+                <h3>Sauvegarde & Données</h3>
+                <p>Récupération de vos documents et photos perdus sur disques endommagés et configuration de sauvegardes automatiques sécurisées.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="contact-section">
+
