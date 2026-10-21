@@ -6,10 +6,10 @@
     <title>JMD Dépannage Informatique | Pyrénées-Orientales</title>
     <meta name="description" content="JMD Dépannage Informatique est votre expert de confiance pour le dépannage et l'assistance technique dans les Pyrénées-Orientales. Intervention rapide à domicile.">
     
-    <!-- Polices de secours standards pour éviter tout blocage d'affichage -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Polices Google Fonts -->
+    <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com" rel="stylesheet">
+    <link href="https://googleapis.com/css2?family=Orbitron:wght@700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
 
     <style>
         /* --- VARIABLES DE COULEURS --- */
@@ -34,7 +34,7 @@
             font-size: 1.2rem;
             line-height: 1.6;
             
-            /* Configuration simplifiée de l'arrière-plan */
+            /* Configuration de l'arrière-plan sans aucun flou ni voile noir */
             background-image: url('fond_jmd.webp');
             background-size: cover;
             background-position: center;
@@ -48,7 +48,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 5%;
-            background: rgba(3, 3, 6, 0.9); /* Fond sombre solide pour garantir la lisibilité */
+            background: rgba(3, 3, 6, 0.9);
             border-bottom: 2px solid var(--primary-cyan);
         }
 
@@ -150,10 +150,9 @@
             color: #000;
         }
 
-        /* --- BLOCS DE SERVICES --- */
+        /* --- BLOCS DE SERVICES (Transparents pour voir le fond net) --- */
         .services {
             padding: 60px 5%;
-            background: rgba(3, 3, 6, 0.85);
             margin-top: 40px;
         }
 
@@ -173,7 +172,7 @@
         }
 
         .card {
-            background: rgba(12, 18, 28, 0.9);
+            background: rgba(12, 18, 28, 0.85); /* Légère opacité pour garder le texte lisible sur le fond */
             border: 1px solid rgba(61, 245, 245, 0.3);
             padding: 30px;
             border-radius: 8px;
@@ -198,7 +197,7 @@
         }
 
         .contact-box {
-            background: rgba(12, 18, 28, 0.95);
+            background: rgba(12, 18, 28, 0.85);
             border: 1px solid rgba(61, 245, 245, 0.4);
             border-radius: 12px;
             padding: 35px;
@@ -217,31 +216,30 @@
             font-weight: bold;
         }
 
-        /* --- PIED DE PAGE : BANNIÈRE SÉCURISÉE --- */
+        /* --- CORRECTION INTÉGRATION DE LA BANNIÈRE TOUT EN BAS --- */
         .footer-banner {
             width: 100%;
-            background-color: #000;
-            border-top: 2px solid var(--primary-cyan);
+            background-color: transparent;
             margin-top: 60px;
+            display: block;
         }
 
         .footer-banner img {
             width: 100%;
             height: auto;
-            max-height: 220px;
-            object-fit: cover;
-            display: block;
+            display: block; /* Supprime l'espace vide sous la bannière */
         }
 
         footer {
-            background-color: #000;
+            background-color: #000000;
             text-align: center;
-            padding: 20px;
+            padding: 25px;
             color: var(--text-gray);
             font-size: 1rem;
+            border-top: 2px solid var(--primary-cyan);
         }
 
-        /* REGLAGES MOBILE */
+        /* RÉGLAGES MOBILE */
         @media (max-width: 600px) {
             header {
                 flex-direction: column;
@@ -259,7 +257,7 @@
 </head>
 <body>
 
-    <!-- Barre de menu (Fixe en haut de page, non collante au défilement pour éviter les bugs) -->
+    <!-- Barre de menu -->
     <header>
         <a href="#" class="brand">
             <img src="logo_jmd.png" alt="Logo JMD" class="logo-nav-img">
@@ -297,7 +295,7 @@
             </div>
             <div class="card">
                 <h3>Sauvegarde & Données</h3>
-                <p>Récupération de vos documents perdus sur disques endommagés et configuration de sauvegardes sécurisées.</p>
+                <p>Récupération de vos documents perdus sur disques endommagés et configuration de sauvegardes automatiques sécurisées.</p>
             </div>
         </div>
     </section>
@@ -314,11 +312,12 @@
         </div>
     </section>
 
-    <!-- Bannière en pied de page (Tout en bas) -->
+    <!-- Bannière de pied de page (Désormais visible sans restriction) -->
     <div class="footer-banner">
         <img src="banniere_jmd.webp" alt="Bannière JMD Informatique">
     </div>
 
+    <!-- Copyright -->
     <footer>
         <p>&copy; 2026 JMD Dépannage Informatique. Tous droits réservés.</p>
     </footer>
